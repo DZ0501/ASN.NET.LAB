@@ -1,0 +1,34 @@
+﻿@model Book
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div>
+    <form method="post" asp-action="Create" asp-controller="Book">
+        <div class="mb-3">
+            <label asp-for="Title"></label>
+            <input class="form-control" asp-for="Title"/>
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Author"></label>
+            <input class="form-control" asp-for="Author" />
+            <span asp-validation-for="Author" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CreatedDate"></label>
+            <input class="form-control" asp-for="CreatedDate" />
+            <span asp-validation-for="CreatedDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="IsAvailable"></label>
+            <input class="form-control" asp-for="IsAvailable" />
+            <span asp-validation-for="IsAvailable" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <button class ="btn btn-primary" type="submit">Zapisz</button>
+        </div>
+    </form>
+</div>

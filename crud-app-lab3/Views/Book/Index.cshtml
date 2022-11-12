@@ -1,0 +1,31 @@
+﻿@model Dictionary<int, Book>
+@{
+    
+}
+<div class="text-center">
+    <table class="table">
+        @foreach(var entry in @Model){
+            var book = entry.Value;
+            <tr>
+                <td>
+                    @book.Title
+                </td>
+                <td>
+                    @book.Author
+                </td>
+                <td>
+                    @book.IsAvailable
+                    </td>
+                <td>
+                    <a class ="btn btn-danger" asp-controller="Book" asp-action="Delete" asp-route-id=@book.Id>Usuń</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" asp-controller="Book" asp-action="Edit" asp-route-id=@book.Id>Edytuj</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <div>
+        <a class="btn btn-outline-primary" asp-action="CreateForm" asp-controller="Book">Dodaj książkę</a>
+    </div>
+</div>
